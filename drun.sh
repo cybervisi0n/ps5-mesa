@@ -49,7 +49,7 @@ docker run -it --user $(id -u):$(id -g) \
            --cap-add SYS_ADMIN \
            --mount type=bind,src=./,target=$CWD \
            $IMAGENAME \
-           bash -c "cd $CWD && source ./env_vars.sh && bash"
+           bash -c "cd $CWD && source ./ps5-scripts/env_vars.sh && bash"
 exit 0
 fi
 
@@ -63,5 +63,5 @@ docker run --user $(id -u):$(id -g) \
            --cap-add SYS_ADMIN \
            -i \
            --mount type=bind,src=./,target=$CWD \
-           $IMAGENAME bash -c "cd $CWD && source ./env_vars.sh &&  $COMMAND"
+           $IMAGENAME bash -c "cd $CWD && source ./ps5-scripts/env_vars.sh &&  $COMMAND"
 
