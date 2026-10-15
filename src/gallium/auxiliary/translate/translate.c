@@ -38,7 +38,7 @@ struct translate *translate_create( const struct translate_key *key )
 {
    struct translate *translate = NULL;
 
-#if DETECT_ARCH_X86 || DETECT_ARCH_X86_64
+#if (DETECT_ARCH_X86 || DETECT_ARCH_X86_64) && !defined(__PROSPERO__)
    translate = translate_sse2_create( key );
    if (translate)
       return translate;

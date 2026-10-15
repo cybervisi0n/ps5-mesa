@@ -33,7 +33,11 @@
  *   chance of experiencing CPU cache thrashing
  * but it should be high enough so that u_queue overhead remains negligible.
  */
+#ifdef __PROSPERO__
+#define MARSHAL_MAX_CMD_BUFFER_SIZE (256 * 1024)
+#else
 #define MARSHAL_MAX_CMD_BUFFER_SIZE (8 * 1024)
+#endif
 
 /* We need to leave 1 slot at the end to insert the END marker for unmarshal
  * calls that look ahead to know where the batch ends.
