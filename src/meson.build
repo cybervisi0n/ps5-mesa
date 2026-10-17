@@ -39,7 +39,7 @@ glsl_util_files = files(
     'mesa/main/extensions_table.c',
     'mesa/program/prog_parameter.c',
     'mesa/program/symbol_table.c',
-    'mesa/program/dummy_errors.c',
+    #'mesa/program/dummy_errors.c',
 )
 
 sha1_h = custom_target(
